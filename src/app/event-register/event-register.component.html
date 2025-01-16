@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <h2>Cadastro de Evento</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome do Evento</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nome"
+        [(ngModel)]="evento.nome"
+        name="nome"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="descricao" class="form-label">Descrição</label>
+      <textarea
+        class="form-control"
+        id="descricao"
+        [(ngModel)]="evento.descricao"
+        name="descricao"
+        required
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="data" class="form-label">Data</label>
+      <input
+        type="date"
+        class="form-control"
+        id="data"
+        [(ngModel)]="evento.data"
+        name="data"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo</label>
+      <select class="form-control" id="tipo" [(ngModel)]="evento.tipo" name="tipo" required>
+        <option value="Publico">Público</option>
+        <option value="Privado">Privado</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar Evento</button>
+  </form>
+</div>

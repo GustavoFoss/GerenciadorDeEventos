@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h2>Eventos Disponíveis</h2>
+  <p *ngIf="eventos.length === 0">Nenhum evento disponível para o seu perfil.</p>
+
+  <!-- Botão para registrar um novo evento -->
+  <button class="btn btn-primary mb-3" (click)="onRegisterEvent()">Registrar Novo Evento</button>
+
+  <div *ngFor="let evento of eventos" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ evento.nome }}</h5>
+      <p class="card-text">{{ evento.descricao }}</p>
+      <p class="card-text"><small class="text-muted">Data: {{ evento.data }}</small></p>
+    </div>
+  </div>
+</div>

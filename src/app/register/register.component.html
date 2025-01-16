@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>Cadastro de Usuário</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input
+                id="nome"
+                formControlName="nome"
+                type="text"
+                class="form-control"
+                placeholder="Digite seu nome"
+              />
+              <small *ngIf="registerForm.get('nome')?.invalid && registerForm.get('nome')?.touched" class="text-danger">
+                Nome é obrigatório (mínimo 3 caracteres).
+              </small>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                class="form-control"
+                placeholder="Digite seu e-mail"
+              />
+              <small *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                Insira um e-mail válido.
+              </small>
+            </div>
+
+            <div class="mb-3">
+              <label for="senha" class="form-label">Senha</label>
+              <input
+                id="senha"
+                formControlName="senha"
+                type="password"
+                class="form-control"
+                placeholder="Digite sua senha"
+              />
+              <small *ngIf="registerForm.get('senha')?.invalid && registerForm.get('senha')?.touched" class="text-danger">
+                Senha é obrigatória (mínimo 6 caracteres).
+              </small>
+            </div>
+
+            <div class="mb-3">
+              <label for="perfil" class="form-label">Perfil</label>
+              <select
+                class="form-select"
+                id="perfil"
+                formControlName="perfil"
+                required
+              >
+                <option value="Publico">Público</option>
+                <option value="Privado">Privado</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100" [disabled]="registerForm.invalid">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
