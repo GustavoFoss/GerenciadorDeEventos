@@ -20,11 +20,6 @@ Antes de começar, é necessário ter as seguintes ferramentas instaladas:
 
 ### Backend (ASP.NET Core)
 
-1. **Clonar o repositório**:
-
-   ```bash
-   git clone https://github.com/seu-usuario/gerenciador-de-eventos.git
-   cd gerenciador-de-eventos/backend
 Instalar as dependências:
 
 O backend é uma aplicação ASP.NET Core, então as dependências são instaladas automaticamente através do comando:
